@@ -27,7 +27,12 @@ public class MyFragmentAdapter extends FragmentStatePagerAdapter {
 	public int getCount() {
 		return HorizontalSwipeActivity.NUM_FRAGS;
 	}
-
+	
+	@Override
+    public CharSequence getPageTitle (int position) {
+        return "Item #" + position;
+    }
+	
 	@Override
 	public Fragment getItem(int position) {
 		Fragment fragment = new MyObjectFragment();
