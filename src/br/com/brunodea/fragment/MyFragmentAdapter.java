@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import br.com.brunodea.HorizontalSwipeActivity;
 import br.com.brunodea.R;
 
@@ -29,7 +28,7 @@ public class MyFragmentAdapter extends FragmentStatePagerAdapter {
 	}
 	
 	@Override
-    public CharSequence getPageTitle (int position) {
+    public CharSequence getPageTitle(int position) {
         return "Item #" + position;
     }
 	
@@ -76,8 +75,8 @@ public class MyFragmentAdapter extends FragmentStatePagerAdapter {
 			 * Sem a altura do layout ter sido setada aqui, o ViewPager não mostrava nada.
 			 */
 			View v = inflater.inflate(layout, container, false);
-			LayoutParams l = v.getLayoutParams();
-			l.height = LayoutParams.WRAP_CONTENT;
+			android.view.ViewGroup.LayoutParams l = v.getLayoutParams();
+			l.height = android.support.v4.view.ViewPager.LayoutParams.WRAP_CONTENT;
 			v.setLayoutParams(l);
 			return v;
 		}
