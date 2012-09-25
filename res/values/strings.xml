@@ -2,5 +2,8 @@
 
     <string name="app_name">TestAndroidStuff</string>
     <string name="something">Alguma Coisa</string>
-    
+    <string name="previous">Anterior</string>
+    <string name="next">Próximo</string>
+    <string name="zerar">Zerar</string>
+    <string name="logo">Logo da Empresa</string>
 </resources>

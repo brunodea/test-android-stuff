@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="HorizontalLineColor">#000000</color>
+    <color name="FooterColor">#000000</color> <!-- fazer semi-transparent #00000077 -->
+    <color name="WindowTitleBG">#FFFFFF</color>
+    <color name="FooterTextColor">#FFFFFF</color>
 </resources>
