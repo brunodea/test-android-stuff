@@ -54,8 +54,13 @@ public class MyFragmentAdapter extends FragmentStatePagerAdapter {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, 
 				Bundle savedInstanceState) {
-			int layout = R.layout.content1;
 			int position = getArguments().getInt(POS, 0);
+			
+			return inflater.inflate(getResourceLayout(position), container, false);
+		}
+		
+		private int getResourceLayout(int position) {
+			int layout = R.layout.content1;
 			switch(position) {
 			case 0:
 				layout = R.layout.content1;
@@ -67,11 +72,10 @@ public class MyFragmentAdapter extends FragmentStatePagerAdapter {
 				layout = R.layout.content3;
 				break;
 			default:
-				layout = R.layout.content1;
+				layout = getResourceLayout(position % 3); //3 pq tem só content1,content2 e content3.
 				break;
 			}
-			
-			return inflater.inflate(layout, container, false);
+			return layout;
 		}
 	}
 }
