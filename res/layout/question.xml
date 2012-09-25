@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    
+    <android.support.v4.view.ViewPager
+	    android:id="@+id/viewpager_question"
+	    android:layout_width="match_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_marginBottom="30dp">
+	    
+	    <android.support.v4.view.PagerTitleStrip
+	      android:id="@+id/pager_title_strip_question"
+	      android:layout_width="fill_parent"
+	      android:layout_height="30dp"
+	      android:layout_gravity="top"
+	      android:background="#33b5e5"
+	      android:textColor="#fff"
+	      android:paddingTop="@dimen/padding_small"
+	      android:paddingBottom="@dimen/padding_small"/>
+    </android.support.v4.view.ViewPager>
+    
+    <LinearLayout 
+        android:id="@+id/linearlayout_question_footer"
+        style="@style/FooterLinearLayout"
+        android:layout_alignParentBottom="true">
+        
+        <TextView 
+            android:id="@+id/textview_question_center_footer"
+            android:textColor="@color/FooterTextColor"
+            style="@style/Footer"/>
+    </LinearLayout>
+</RelativeLayout>
