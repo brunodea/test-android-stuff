@@ -17,4 +17,16 @@
         android:layout_alignParentLeft="true"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"/>
+    
+    <ImageView 
+        android:id="@+id/imageview_mandatory_question"
+        android:contentDescription="@string/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"/>
+    
 </RelativeLayout>
