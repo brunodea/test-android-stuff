@@ -41,5 +41,36 @@ public class HorizontalSwipeActivity extends FragmentActivity {
         
         mViewPager = (ViewPager)findViewById(R.id.viewpager_question);
         mViewPager.setAdapter(mFragmentAdapter);
+        mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
+			@Override
+			public void onPageSelected(int position) {
+				mCurrentFragPos = position;
+				adjustFooterText(position);
+			}
+			
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+			}
+			
+			@Override
+			public void onPageScrollStateChanged(int position) {
+			}
+		});
+        
+        mTextViewFooter = (TextView)findViewById(R.id.textview_question_center_footer);
+    }
+    
+    public void adjustFooterText(int frag_position) {
+    	if(mTextViewFooter != null) {
+			String txt = "Semana do Coração <b>(" + (frag_position+1) + "/" + 
+					NUM_FRAGS + ")<b>";
+    		mTextViewFooter.setText(Html.fromHtml(txt));
+    	}
+    }
+    
+    @Override
+    public void onResume() {
+    	super.onResume();
+    	adjustFooterText(mCurrentFragPos);
     }
 }
