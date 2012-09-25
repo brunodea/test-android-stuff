@@ -18,7 +18,7 @@ import br.com.brunodea.fragment.MyFragmentAdapter;
  *
  */
 public class HorizontalSwipeActivity extends FragmentActivity {
-	public static final int NUM_FRAGS = 3;
+	public static final int NUM_FRAGS = 30;
 	
 	private ViewPager mViewPager;
 	private MyFragmentAdapter mFragmentAdapter;
