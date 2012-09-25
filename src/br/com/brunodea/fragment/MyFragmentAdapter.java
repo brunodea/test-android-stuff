@@ -71,14 +71,7 @@ public class MyFragmentAdapter extends FragmentStatePagerAdapter {
 				break;
 			}
 			
-			/*
-			 * Sem a altura do layout ter sido setada aqui, o ViewPager não mostrava nada.
-			 */
-			View v = inflater.inflate(layout, container, false);
-			android.view.ViewGroup.LayoutParams l = v.getLayoutParams();
-			l.height = android.support.v4.view.ViewPager.LayoutParams.WRAP_CONTENT;
-			v.setLayoutParams(l);
-			return v;
+			return inflater.inflate(layout, container, false);
 		}
 	}
 }
