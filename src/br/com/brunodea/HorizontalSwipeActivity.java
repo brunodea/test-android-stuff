@@ -5,8 +5,10 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.text.Html;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 import br.com.brunodea.fragment.MyFragmentAdapter;
 
@@ -24,6 +26,7 @@ public class HorizontalSwipeActivity extends FragmentActivity {
 	private MyFragmentAdapter mFragmentAdapter;
 	
 	private TextView mTextViewFooter;
+	private ImageView mImageViewMandatory;
 	
 	private int mCurrentFragPos;
 	
@@ -46,6 +49,7 @@ public class HorizontalSwipeActivity extends FragmentActivity {
 			public void onPageSelected(int position) {
 				mCurrentFragPos = position;
 				adjustFooterText(position);
+				adjustMandatoryImage(position);
 			}
 			
 			@Override
@@ -58,6 +62,8 @@ public class HorizontalSwipeActivity extends FragmentActivity {
 		});
         
         mTextViewFooter = (TextView)findViewById(R.id.textview_question_center_footer);
+        mImageViewMandatory = (ImageView)findViewById(R.id.imageview_mandatory_question);
+        mImageViewMandatory.setVisibility(View.VISIBLE);
     }
     
     public void adjustFooterText(int frag_position) {
@@ -68,9 +74,29 @@ public class HorizontalSwipeActivity extends FragmentActivity {
     	}
     }
     
+    private void adjustMandatoryImage(int frag_position) {
+    	boolean mandatory = false;
+    	switch(frag_position%5) {
+    	case 0:
+    		mandatory = true;
+    		break;
+    	case 2:
+    		mandatory = true;
+    		break;
+    	default:
+    		break;
+    	}
+    	if(mandatory) {
+    		mImageViewMandatory.setImageDrawable(getResources().getDrawable(R.drawable.red_alert128));
+    	} else {
+    		mImageViewMandatory.setImageDrawable(getResources().getDrawable(R.drawable.grey_alert128));
+    	}
+    }
+    
     @Override
     public void onResume() {
     	super.onResume();
     	adjustFooterText(mCurrentFragPos);
+    	adjustMandatoryImage(mCurrentFragPos);
     }
 }
